@@ -2,12 +2,13 @@
   "name": "vp-theme-syntax",
   "theme": "syntax",
   "version": "0.0.0",
-  "description": "A short description of your syntax theme",
+  "description": "Syntax theme for Atom text editor optimised for Frontend development",
   "keywords": [
     "syntax",
     "theme"
   ],
-  "repository": "https://github.com/atom/vp-theme-syntax",
+  "repository": "https://github.com/vicpi/vp-theme-syntax",
+  "author": "Viktor Pyskunov",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
