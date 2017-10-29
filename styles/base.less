@@ -1,0 +1,165 @@
+@import "syntax-variables";
+
+atom-text-editor {
+    background-color: @syntax-background-color;
+    color: @text;
+
+    .wrap-guide {
+        background-color: @syntax-wrap-guide-color;
+    }
+
+    .indent-guide {
+        color: @syntax-indent-guide-color;
+    }
+
+    .invisible-character {
+        color: @syntax-invisible-character-color;
+    }
+
+    .gutter {
+        background-color: @syntax-gutter-background-color;
+        color: @syntax-gutter-text-color;
+
+        .line-number {
+            &.cursor-line {
+                background-color: @syntax-gutter-background-color-selected;
+                color: @syntax-gutter-text-color-selected;
+            }
+
+            &.cursor-line-no-selection {
+                color: @syntax-gutter-text-color-selected;
+            }
+        }
+    }
+
+    .fold-marker:after,
+    .gutter .line-number.folded,
+    .gutter .line-number:after {
+        color: @light-gray;
+    }
+
+    .invisible {
+        color: @syntax-text-color;
+    }
+
+    .cursor {
+        color: @syntax-cursor-color;
+    }
+
+    .selection .region {
+        background-color: @syntax-selection-color;
+    }
+}
+
+.syntax--source.syntax--gfm .syntax--markup {
+    -webkit-font-smoothing: auto;
+
+    &.syntax--heading {
+        color: @green;
+    }
+}
+// Syntax styles
+
+.syntax--comment {
+    color: @light-gray;
+}
+
+.syntax--js {
+    // this
+    &.syntax--language.syntax--variable {
+        color: @this;
+    }
+
+    &.syntax--string {
+        color: @string;
+    }
+
+    &.syntax--variable.syntax--default {
+        color: @keyword;
+    }
+
+    &.syntax--keyword {
+        color: @keyword;
+    }
+
+    &.syntax--punctuation.syntax--curly.syntax--bracket {
+        color: @curly-bracket;
+    }
+
+    &.syntax--storage {
+        color: @keyword;
+    }
+
+    &.syntax--meta.syntax--function {
+        .syntax--js.syntax--function.syntax--name {
+            color: @function-definition-name;
+        }
+    }
+
+    &.syntax--type.syntax--function.syntax--arrow {
+        color: @function-arrow;
+    }
+
+    &.syntax--variable.syntax--parameter {
+        color: @parameter;
+    }
+
+    &.syntax--keyword.syntax--operator {
+        color: @operator;
+    }
+
+    &.syntax--tag.syntax--name {
+        color: @jsx-tag;
+    }
+
+    &.syntax--tag.syntax--begin {
+        color: @jsx-tag;
+    }
+
+    &.syntax--tag.syntax--end {
+        color: @jsx-tag;
+    }
+
+    &.syntax--tag.syntax--attribute-name {
+        color: @jsx-tag-attribute;
+    }
+}
+
+.syntax--css {
+    &.syntax--attribute-name {
+        color: @css-selector;
+    }
+
+    &.syntax--property-name {
+        color: @css-property;
+    }
+
+    &.syntax--property-value {
+        color: @text;
+    }
+}
+
+.syntax--scss {
+    &.syntax--keyword {
+        color: @scss-keyword;
+    }
+
+    &.syntax--reference {
+        color: @css-selector;
+    }
+
+    &.syntax--meta.syntax--property-list {
+        > .syntax--variable {
+            color: @css-selector;
+        }
+    }
+
+    &.syntax--variable {
+        color: @scss-variable;
+    }
+}
+// Mini editor
+
+atom-text-editor[mini] .scroll-view {
+    padding-left: 1px;
+}
