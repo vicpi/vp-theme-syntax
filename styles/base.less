@@ -49,6 +49,10 @@ atom-text-editor {
     .selection .region {
         background-color: @syntax-selection-color;
     }
+
+    .syntax--source.syntax--js.syntax--jsx .syntax--jsx .syntax--entity.syntax--other.syntax--attribute-name {
+            font-style: normal;
+    }
 }
 
 .syntax--source.syntax--gfm .syntax--markup {
@@ -72,6 +76,12 @@ atom-text-editor {
 
     &.syntax--string {
         color: @string;
+        &.syntax--template {
+            color: @string;
+            .syntax--definition {
+                color: @string;
+            }
+        }
     }
 
     &.syntax--variable.syntax--default {
@@ -82,46 +92,148 @@ atom-text-editor {
         color: @keyword;
     }
 
+    &.syntax--keyword.syntax--operator.syntax--new {
+        color: @keyword;
+    }
+
     &.syntax--punctuation.syntax--curly.syntax--bracket {
-        color: @curly-bracket;
+        color: @js-curly-brace;
     }
 
     &.syntax--storage {
         color: @keyword;
     }
 
+    &.syntax--keyword.syntax--operator.syntax--of {
+        color: @keyword;
+    }
+
     &.syntax--meta.syntax--function {
-        .syntax--js.syntax--function.syntax--name {
+        > .syntax--function.syntax--type {
+            color: @function-definition;
+        }
+        > .syntax--function.syntax--type.syntax--arrow {
+            color: @function-arrow;
+        }
+        > .syntax--function.syntax--name {
             color: @function-definition-name;
+        }
+
+        .syntax--parameters.syntax--punctuation {
+            .syntax--brace.syntax--round {
+                color: @function-definition-brace;
+            }
         }
     }
 
-    &.syntax--type.syntax--function.syntax--arrow {
-        color: @function-arrow;
+    &.syntax--meta.syntax--function.syntax--json {
+        > .syntax--function.syntax--name {
+            color: @function-name-object-key;
+        }
+    }
+
+    &.syntax--meta.syntax--function-call {
+        > .syntax--function.syntax--name {
+            color: @function-invocation;
+        }
+    }
+
+    &.syntax--meta.syntax--method-call {
+        > .syntax--function.syntax--name {
+            color: @js-object-method;
+        }
     }
 
     &.syntax--variable.syntax--parameter {
         color: @parameter;
     }
 
+    &.syntax--keyword.syntax--operator.syntax--typeof {
+        color: @keyword;
+    }
+
     &.syntax--keyword.syntax--operator {
         color: @operator;
     }
 
-    &.syntax--tag.syntax--name {
-        color: @jsx-tag;
+    &.syntax--object.syntax--key {
+        .syntax--string {
+            color: @js-object-key;
+        }
     }
 
-    &.syntax--tag.syntax--begin {
-        color: @jsx-tag;
+    &.syntax--brace.syntax--curly {
+        color: @js-curly-brace;
     }
 
-    &.syntax--tag.syntax--end {
-        color: @jsx-tag;
+    &.syntax--brace.syntax--square {
+        color: @js-square-brace;
     }
 
-    &.syntax--tag.syntax--attribute-name {
-        color: @jsx-tag-attribute;
+    &.syntax--brace.syntax--round {
+        color: @js-round-brace;
+    }
+
+    &.syntax--variable.syntax--object {
+        color: @js-object;
+    }
+
+    &.syntax--variable {
+        color: @variable;
+        &.syntax--other.syntax--readwrite {
+            color: @js-variable;
+        }
+
+        &.syntax--other.syntax--object {
+            color: @js-variable;
+        }
+    }
+
+    &.syntax--variable.syntax--property {
+        color: @js-object-property;
+    }
+
+    &.syntax--quasi {
+        color: @js-quasi;
+
+        &.syntax--begin {
+            color: @js-quasi-edge;
+        }
+
+        &.syntax--end {
+            color: @js-quasi-edge;
+        }
+    }
+}
+
+&.syntax--jsx {
+    .syntax--tag {
+        &.syntax--name {
+            color: @jsx-tag-name;
+        }
+        &.syntax--definition.syntax--punctuation {
+            color: @jsx-tag-bracket;
+        }
+        .syntax--attribute-name {
+            color: @jsx-attribute-name;
+        }
+    }
+    .syntax--section.syntax--embedded.syntax--punctuation {
+        color: @jsx-embedded-section;
+    }
+}
+
+.syntax--type.syntax--flowtype.syntax--support {
+    color: @flow-type;
+}
+
+.syntax--flowtype.syntax--keyword {
+    color: @flow-keyword;
+}
+
+.syntax--flowtype {
+    .syntax--js.syntax--variable.syntax--readwrite {
+        color: @text;
     }
 }
 
@@ -158,8 +270,45 @@ atom-text-editor {
         color: @scss-variable;
     }
 }
+
+.syntax--json {
+    &.syntax--key.syntax--meta .syntax--string {
+        color: @json-key;
+    }
+
+    &.syntax--string {
+        color: @json-value;
+    }
+}
+
+.syntax--makefile {
+    .syntax--function.syntax--name {
+        color: @makefile-target;
+    }
+
+    .syntax--variable {
+        color: @makefile-variable;
+    }
+
+}
+
+.outline-view {
+    .syntax--keyword {
+        color: @blue;
+    }
+
+    .outline-view-item {
+        > .syntax--function ~ span {
+            display: none;
+        }
+    }
+}
 // Mini editor
 
 atom-text-editor[mini] .scroll-view {
     padding-left: 1px;
+}
+
+atom-overlay {
+    background-color: #333;
 }
