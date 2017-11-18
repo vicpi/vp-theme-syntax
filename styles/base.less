@@ -55,6 +55,10 @@ atom-text-editor {
     }
 }
 
+.atom-ternjs-type {
+    display: none;
+}
+
 .syntax--source.syntax--gfm .syntax--markup {
     -webkit-font-smoothing: auto;
 
@@ -140,7 +144,7 @@ atom-text-editor {
 
     &.syntax--meta.syntax--method-call {
         > .syntax--function.syntax--name {
-            color: @js-object-method;
+            color: @function-invocation;
         }
     }
 
@@ -186,6 +190,14 @@ atom-text-editor {
 
         &.syntax--other.syntax--object {
             color: @js-variable;
+        }
+
+        &.syntax--language.syntax--prototype {
+            color: @js-object-property;
+        }
+
+        &.syntax--language.syntax--constructor {
+            color: @js-object-property;
         }
     }
 
