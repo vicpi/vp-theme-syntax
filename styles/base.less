@@ -76,6 +76,14 @@ atom-text-editor {
     // this
     &.syntax--language.syntax--variable {
         color: @this;
+
+        &.syntax--arguments {
+            color: @text;
+        }
+
+        &.syntax--proto {
+            color: @js-object-property;
+        }
     }
 
     &.syntax--string {
@@ -205,6 +213,10 @@ atom-text-editor {
         color: @js-object-property;
     }
 
+    &.syntax--variable.syntax--other.syntax--readwrite.syntax--shorthandpropertyname {
+        color: @js-shorthand-object-property;
+    }
+
     &.syntax--quasi {
         color: @js-quasi;
 
@@ -215,6 +227,10 @@ atom-text-editor {
         &.syntax--end {
             color: @js-quasi-edge;
         }
+    }
+
+    &.syntax--module {
+        color: @js-special;
     }
 }
 
