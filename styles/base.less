@@ -51,7 +51,7 @@ atom-text-editor {
     }
 
     .syntax--source.syntax--js.syntax--jsx .syntax--jsx .syntax--entity.syntax--other.syntax--attribute-name {
-            font-style: normal;
+        font-style: normal;
     }
 }
 
@@ -88,8 +88,10 @@ atom-text-editor {
 
     &.syntax--string {
         color: @string;
+
         &.syntax--template {
             color: @string;
+
             .syntax--definition {
                 color: @string;
             }
@@ -124,9 +126,11 @@ atom-text-editor {
         > .syntax--function.syntax--type {
             color: @function-definition;
         }
+
         > .syntax--function.syntax--type.syntax--arrow {
             color: @function-arrow;
         }
+
         > .syntax--function.syntax--name {
             color: @function-definition-name;
         }
@@ -192,6 +196,7 @@ atom-text-editor {
 
     &.syntax--variable {
         color: @variable;
+
         &.syntax--other.syntax--readwrite {
             color: @js-variable;
         }
@@ -228,10 +233,9 @@ atom-text-editor {
             color: @js-quasi-edge;
         }
     }
-
-    &.syntax--module {
-        color: @js-special;
-    }
+    // &.syntax--module {
+    //     color: @js-special;
+    // }
 }
 
 &.syntax--jsx {
@@ -239,13 +243,16 @@ atom-text-editor {
         &.syntax--name {
             color: @jsx-tag-name;
         }
+
         &.syntax--definition.syntax--punctuation {
             color: @jsx-tag-bracket;
         }
+
         .syntax--attribute-name {
             color: @jsx-attribute-name;
         }
     }
+
     .syntax--section.syntax--embedded.syntax--punctuation {
         color: @jsx-embedded-section;
     }
@@ -317,7 +324,6 @@ atom-text-editor {
     .syntax--variable {
         color: @makefile-variable;
     }
-
 }
 
 .outline-view {
@@ -339,4 +345,24 @@ atom-text-editor[mini] .scroll-view {
 
 atom-overlay {
     background-color: #333;
+}
+
+.syntax--html {
+    .syntax--tag {
+        .syntax--name {
+            color: @html-tag;
+        }
+        .syntax--doctype {
+            color: @html-tag;
+        }
+        .syntax--tag.syntax--punctuation {
+            color: @html-tag;
+        }
+        .syntax--attribute-name {
+            color: @html-attribute-name;
+        }
+        .syntax--attribute-with-value {
+            color: @html-attribute-value;
+        }
+    }
 }
