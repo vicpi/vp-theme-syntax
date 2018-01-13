@@ -72,7 +72,11 @@ atom-text-editor {
     color: @light-gray;
 }
 
-.syntax--js {
+.syntax--js,
+.syntax--ts {
+    &.syntax--brace.syntax--curly {
+        color: @js-curly-brace;
+    }
     // this
     &.syntax--language.syntax--variable {
         color: @this;
@@ -106,12 +110,20 @@ atom-text-editor {
         color: @keyword;
     }
 
+    &.syntax--keyword.syntax--operator {
+        color: @js-operator;
+    }
+
     &.syntax--keyword.syntax--operator.syntax--new {
         color: @keyword;
     }
 
     &.syntax--punctuation.syntax--curly.syntax--bracket {
         color: @js-curly-brace;
+    }
+
+    &.syntax--comma {
+        color: @js-operator;
     }
 
     &.syntax--storage {
@@ -142,6 +154,16 @@ atom-text-editor {
         }
     }
 
+    .syntax--arrow {
+        .syntax--punctuation.syntax--block {
+            color: @function-definition-curly;
+        }
+
+        > .syntax--curly {
+            // color: @function-definition-curly;
+        }
+    }
+
     &.syntax--meta.syntax--function.syntax--json {
         > .syntax--function.syntax--name {
             color: @function-name-object-key;
@@ -149,12 +171,20 @@ atom-text-editor {
     }
 
     &.syntax--meta.syntax--function-call {
+        > .syntax--round {
+            color: @function-invocation-brace;
+        }
+
         > .syntax--function.syntax--name {
             color: @function-invocation;
         }
     }
 
     &.syntax--meta.syntax--method-call {
+        > .syntax--round {
+            color: @function-invocation-brace;
+        }
+
         > .syntax--function.syntax--name {
             color: @function-invocation;
         }
@@ -164,12 +194,43 @@ atom-text-editor {
         color: @parameter;
     }
 
+    &.syntax--boolean {
+        color: @true;
+    }
+
+    &.syntax--null {
+        color: @null;
+    }
+
+    &.syntax--undefined {
+        color: @undefined;
+    }
+
     &.syntax--keyword.syntax--operator.syntax--typeof {
         color: @keyword;
     }
 
     &.syntax--keyword.syntax--operator {
-        color: @operator;
+        color: @js-operator;
+    }
+
+    &.syntax--keyword.syntax--operator.syntax--in {
+        color: @keyword;
+    }
+
+    &.syntax--litobj,
+    &.syntax--objectliteral {
+        .syntax--punctuation.syntax--block {
+            color: @js-object-key;
+        }
+
+        &.punctuation {
+            color: @text;
+        }
+
+        &.syntax--curly {
+            color: @js-object-key;
+        }
     }
 
     &.syntax--object.syntax--key {
@@ -178,8 +239,14 @@ atom-text-editor {
         }
     }
 
-    &.syntax--brace.syntax--curly {
-        color: @js-curly-brace;
+    &.syntax--object-literal {
+        .syntax--punctuation.syntax--block {
+            color: @js-object-key;
+        }
+    }
+
+    &.syntax--object-literal.syntax--key {
+        color: @js-object-key;
     }
 
     &.syntax--brace.syntax--square {
@@ -236,6 +303,32 @@ atom-text-editor {
     // &.syntax--module {
     //     color: @js-special;
     // }
+    &.syntax--parameters {
+        .syntax--type {
+            color: @js-type;
+        }
+
+        .syntax--type.syntax--operator {
+            color: @text;
+        }
+
+        &.syntax--begin,
+        &.syntax--end {
+            color: @js-parameters-braces;
+        }
+    }
+
+    &.syntax--return.syntax--type {
+        color: @js-type;
+    }
+
+    &.syntax--decorator {
+        color: @js-decorator;
+    }
+
+    &.syntax--litobj.syntax--curly {
+        color: @js-object-key;
+    }
 }
 
 &.syntax--jsx {
@@ -352,15 +445,19 @@ atom-overlay {
         .syntax--name {
             color: @html-tag;
         }
+
         .syntax--doctype {
             color: @html-tag;
         }
+
         .syntax--tag.syntax--punctuation {
             color: @html-tag;
         }
+
         .syntax--attribute-name {
             color: @html-attribute-name;
         }
+
         .syntax--attribute-with-value {
             color: @html-attribute-value;
         }
