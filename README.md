@@ -28,6 +28,16 @@ Please install it first.
 * Makefile
 * JSON
 
-## Screenshot
+## Screenshots
 
-![A screenshot of your theme](https://f.cloud.github.com/assets/69169/2289498/4c3cb0ec-a009-11e3-8dbd-077ee11741e5.gif)
+### HTML
+
+<img width="450" alt="screen shot 2018-02-04 at 08 58 09" src="https://user-images.githubusercontent.com/49911/35775488-b3b766ca-0989-11e8-999c-36d23de0c249.png">
+
+
+### JavaScript
+
+<img width="500" alt="screen shot 2018-02-04 at 08 58 28" src="https://user-images.githubusercontent.com/49911/35775490-bd62f388-0989-11e8-8511-37d41171b350.png">
+
+
+
