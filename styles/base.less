@@ -180,6 +180,10 @@ atom-text-editor {
         }
     }
 
+    &.syntax--console.syntax--function {
+        color: @function-invocation;
+    }
+
     &.syntax--meta.syntax--method-call {
         > .syntax--round {
             color: @function-invocation-brace;
@@ -308,6 +312,10 @@ atom-text-editor {
             color: @js-type;
         }
 
+        .syntax--punctuation {
+            color: @js-type;
+        }
+
         .syntax--type.syntax--operator {
             color: @text;
         }
@@ -328,6 +336,12 @@ atom-text-editor {
 
     &.syntax--litobj.syntax--curly {
         color: @js-object-key;
+    }
+
+    &.syntax--constant {
+        &.syntax--numeric {
+            color: @js-number;
+        }
     }
 }
 
@@ -351,17 +365,21 @@ atom-text-editor {
     }
 }
 
-.syntax--type.syntax--flowtype.syntax--support {
-    color: @flow-type;
-}
-
-.syntax--flowtype.syntax--keyword {
-    color: @flow-keyword;
-}
-
 .syntax--flowtype {
     .syntax--js.syntax--variable.syntax--readwrite {
         color: @text;
+    }
+
+    .syntax--keyword {
+        color: @flow-keyword;
+    }
+
+    &.syntax--punctuation {
+        color: @flow-semicolon;
+    }
+
+    .syntax--support {
+        color: @flow-type;
     }
 }
 
