@@ -20,6 +20,13 @@ Please install it first.
 
 * JavaScript
 * React JSX
+* Flow
+* TypeScript
+* HTML
+* CSS
+* SASS
+* Makefile
+* JSON
 
 ## Screenshot
 
