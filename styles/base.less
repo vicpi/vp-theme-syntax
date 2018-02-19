@@ -228,7 +228,7 @@ atom-text-editor {
             color: @js-object-key;
         }
 
-        &.punctuation {
+        &.syntax--punctuation {
             color: @text;
         }
 
@@ -366,11 +366,7 @@ atom-text-editor {
 }
 
 .syntax--flowtype {
-    .syntax--js.syntax--variable.syntax--readwrite {
-        color: @text;
-    }
-
-    .syntax--keyword {
+    &.syntax--keyword {
         color: @flow-keyword;
     }
 
