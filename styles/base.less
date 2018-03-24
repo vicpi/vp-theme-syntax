@@ -69,7 +69,7 @@ atom-text-editor {
 // Syntax styles
 
 .syntax--comment {
-    color: @light-gray;
+    color: @js-comment;
 }
 
 .syntax--js,
@@ -79,7 +79,7 @@ atom-text-editor {
     }
     // this
     &.syntax--language.syntax--variable {
-        color: @this;
+        color: @js-this;
 
         &.syntax--arguments {
             color: @text;
@@ -91,31 +91,35 @@ atom-text-editor {
     }
 
     &.syntax--string {
-        color: @string;
+        color: @js-string;
 
         &.syntax--template {
-            color: @string;
+            color: @js-string;
 
             .syntax--definition {
-                color: @string;
+                color: @js-string;
             }
         }
     }
 
     &.syntax--variable.syntax--default {
-        color: @keyword;
+        color: @js-keyword;
     }
 
     &.syntax--keyword {
-        color: @keyword;
+        color: @js-keyword;
     }
 
     &.syntax--keyword.syntax--operator {
         color: @js-operator;
     }
 
+    &.syntax--keyword.syntax--operator.syntax--accessor {
+        color: @js-dot;
+    }
+
     &.syntax--keyword.syntax--operator.syntax--new {
-        color: @keyword;
+        color: @js-keyword;
     }
 
     &.syntax--punctuation.syntax--curly.syntax--bracket {
@@ -123,95 +127,101 @@ atom-text-editor {
     }
 
     &.syntax--comma {
-        color: @js-operator;
+        color: @js-comma;
     }
 
     &.syntax--storage {
-        color: @keyword;
+        color: @js-keyword;
     }
 
     &.syntax--keyword.syntax--operator.syntax--of {
-        color: @keyword;
+        color: @js-keyword;
     }
 
     &.syntax--meta.syntax--function {
         > .syntax--function.syntax--type {
-            color: @function-definition;
+            color: @js-function-definition;
         }
 
         > .syntax--function.syntax--type.syntax--arrow {
-            color: @function-arrow;
+            color: @js-function-arrow;
         }
 
         > .syntax--function.syntax--name {
-            color: @function-definition-name;
+            color: @js-function-definition-name;
+        }
+
+        &.syntax--parameters {
+            .syntax--variable.syntax--other.syntax--readwrite {
+                color: @js-function-argument;
+            }
         }
 
         .syntax--parameters.syntax--punctuation {
             .syntax--brace.syntax--round {
-                color: @function-definition-brace;
+                color: @js-function-definition-brace;
             }
         }
     }
 
     .syntax--arrow {
         .syntax--punctuation.syntax--block {
-            color: @function-definition-curly;
+            color: @js-function-definition-curly;
         }
 
         > .syntax--curly {
-            // color: @function-definition-curly;
+            // color: @js-function-definition-curly;
         }
     }
 
     &.syntax--meta.syntax--function.syntax--json {
         > .syntax--function.syntax--name {
-            color: @function-name-object-key;
+            color: @js-function-name-object-key;
         }
     }
 
     &.syntax--meta.syntax--function-call {
         > .syntax--round {
-            color: @function-invocation-brace;
+            color: @js-function-invocation-brace;
         }
 
         > .syntax--function.syntax--name {
-            color: @function-invocation;
+            color: @js-function-invocation;
         }
     }
 
     &.syntax--console.syntax--function {
-        color: @function-invocation;
+        color: @js-function-invocation;
     }
 
     &.syntax--meta.syntax--method-call {
         > .syntax--round {
-            color: @function-invocation-brace;
+            color: @js-function-invocation-brace;
         }
 
         > .syntax--function.syntax--name {
-            color: @function-invocation;
+            color: @js-function-invocation;
         }
     }
 
     &.syntax--variable.syntax--parameter {
-        color: @parameter;
+        color: @js-parameter;
     }
 
     &.syntax--boolean {
-        color: @true;
+        color: @js-boolean;
     }
 
     &.syntax--null {
-        color: @null;
+        color: @js-null;
     }
 
     &.syntax--undefined {
-        color: @undefined;
+        color: @js-undefined;
     }
 
     &.syntax--keyword.syntax--operator.syntax--typeof {
-        color: @keyword;
+        color: @js-keyword;
     }
 
     &.syntax--keyword.syntax--operator {
@@ -219,22 +229,15 @@ atom-text-editor {
     }
 
     &.syntax--keyword.syntax--operator.syntax--in {
-        color: @keyword;
+        color: @js-keyword;
     }
 
     &.syntax--litobj,
     &.syntax--objectliteral {
         .syntax--punctuation.syntax--block {
-            color: @js-object-key;
+            color: @js-object-brace;
         }
 
-        &.syntax--punctuation {
-            color: @text;
-        }
-
-        &.syntax--curly {
-            color: @js-object-key;
-        }
     }
 
     &.syntax--object.syntax--key {
@@ -335,7 +338,7 @@ atom-text-editor {
     }
 
     &.syntax--litobj.syntax--curly {
-        color: @js-object-key;
+        color: @js-object-brace;
     }
 
     &.syntax--constant {
