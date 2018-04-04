@@ -53,6 +53,10 @@ atom-text-editor {
     .syntax--source.syntax--js.syntax--jsx .syntax--jsx .syntax--entity.syntax--other.syntax--attribute-name {
         font-style: normal;
     }
+
+    .syntax--keyword.syntax--assignment {
+        color: @js-assignment;
+    }
 }
 
 .atom-ternjs-type {
@@ -110,7 +114,7 @@ atom-text-editor {
         color: @js-keyword;
     }
 
-    &.syntax--keyword.syntax--operator {
+    &.syntax--operator {
         color: @js-operator;
     }
 
@@ -131,7 +135,7 @@ atom-text-editor {
     }
 
     &.syntax--storage {
-        color: @js-keyword;
+        color: @js-definition;
     }
 
     &.syntax--keyword.syntax--operator.syntax--of {
@@ -222,10 +226,6 @@ atom-text-editor {
 
     &.syntax--keyword.syntax--operator.syntax--typeof {
         color: @js-keyword;
-    }
-
-    &.syntax--keyword.syntax--operator {
-        color: @js-operator;
     }
 
     &.syntax--keyword.syntax--operator.syntax--in {
@@ -345,6 +345,10 @@ atom-text-editor {
         &.syntax--numeric {
             color: @js-number;
         }
+    }
+
+    .syntax--terminator {
+        color: @js-semicolon;
     }
 }
 
