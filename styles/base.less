@@ -232,6 +232,10 @@ atom-text-editor {
         color: @js-keyword;
     }
 
+    &.syntax--keyword.syntax--operator.syntax--logical {
+        color: @js-logical-operator;
+    }
+
     &.syntax--litobj,
     &.syntax--objectliteral {
         .syntax--punctuation.syntax--block {
@@ -397,6 +401,14 @@ atom-text-editor {
 
     &.syntax--property-value {
         color: @text;
+    }
+
+    &.syntax--tag.syntax--name {
+        color: @css-tag-name;
+    }
+
+    &.syntax--unit.syntax--keyword {
+        color: @css-unit;
     }
 }
 
