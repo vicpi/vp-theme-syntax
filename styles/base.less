@@ -118,8 +118,14 @@ atom-text-editor {
         color: @js-operator;
     }
 
-    &.syntax--keyword.syntax--operator.syntax--accessor {
+    &.syntax--operator.syntax--accessor {
         color: @js-dot;
+    }
+
+    &.syntax--module {
+        .syntax--operator.syntax--accessor {
+            color: @js-definition;
+        }
     }
 
     &.syntax--keyword.syntax--operator.syntax--new {
@@ -212,6 +218,10 @@ atom-text-editor {
         color: @js-parameter;
     }
 
+    &.syntax--function.syntax--mutator {
+        color: @js-function-invocation;
+    }
+
     &.syntax--boolean {
         color: @js-boolean;
     }
@@ -230,6 +240,10 @@ atom-text-editor {
 
     &.syntax--keyword.syntax--operator.syntax--in {
         color: @js-keyword;
+    }
+
+    &.syntax--keyword.syntax--operator.syntax--comparison {
+        color: @js-operator-comparison;
     }
 
     &.syntax--keyword.syntax--operator.syntax--logical {
