@@ -148,6 +148,10 @@ atom-text-editor {
         color: @js-keyword;
     }
 
+    &.syntax--punctuation.syntax--key-value.syntax--separator {
+        color: @js-operator;
+    }
+
     &.syntax--meta.syntax--function {
         > .syntax--function.syntax--type {
             color: @js-function-definition;
@@ -239,6 +243,10 @@ atom-text-editor {
     }
 
     &.syntax--keyword.syntax--operator.syntax--in {
+        color: @js-keyword;
+    }
+
+    &.syntax--keyword.syntax--operator.syntax--instanceof {
         color: @js-keyword;
     }
 
