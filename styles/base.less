@@ -79,7 +79,7 @@ atom-text-editor {
 .syntax--js,
 .syntax--ts {
     &.syntax--brace.syntax--curly {
-        color: @js-curly-brace;
+        color: @js-curly-bracket;
     }
     // this
     &.syntax--language.syntax--variable {
@@ -133,7 +133,7 @@ atom-text-editor {
     }
 
     &.syntax--punctuation.syntax--curly.syntax--bracket {
-        color: @js-curly-brace;
+        color: @js-curly-bracket;
     }
 
     &.syntax--comma {
@@ -142,6 +142,11 @@ atom-text-editor {
 
     &.syntax--storage {
         color: @js-definition;
+    }
+
+    &.syntax--punctuation.syntax--class.syntax--begin,
+    &.syntax--punctuation.syntax--class.syntax--end {
+        color: @js-curly-bracket;
     }
 
     &.syntax--keyword.syntax--operator.syntax--of {
