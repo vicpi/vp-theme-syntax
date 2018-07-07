@@ -1,67 +1,92 @@
 // Colors
+@text: #b7b7b7;
 @very-light-gray: #c5c8c6;
 @light-gray: #898B89;
-@gray: #373b41;
+@gray: #898B89;
 @dark-gray: #282a2e;
 @very-dark-gray: #1d1f21;
 @blue: #66A7E7;
-@green: #7aa11a;
-@orange: #D19A66;
-@red: #d86464;
-@yellow: #C1B660;
-@text: #b7b7b7;
-@purple: #a359a8;
+@darkBlue: #6089b4;
 @teal: #649891;
-@light-orange: #f0c674;
 @violet: #a481df;
+@green: #7aa11a;
+@red: #d86464;
+@light-orange: #f0c674;
+@orange: #D19A66;
+@dark-orange: #ce6700;
+@yellow: #C1B660;
+@dark-yellow: #d0b344;
+@brown: #894f21;
+@purple: #a359a8;
+@dark-purple: #9872a2;
 
 // JavaScript
-@js-this: @text;
-@js-keyword: @red;
-@js-string: @yellow;
-@js-number: @yellow;
-@js-function-arrow: @blue;
-@js-function-definition-brace: @orange;
-@js-function-definition-curly: @blue;
-@js-function-definition-name: @green;
-@js-function-definition: @blue;
-@js-function-name-object-key: @teal;
-@js-function-invocation: @green;
-@js-function-invocation-brace: @purple;
-@js-function-argument: @orange;
-@js-parameter: @text;
-@js-operator: @purple;
-@js-logical-operator: @purple;
-@js-operator-comparison: @purple;
-@js-null: @red;
-@js-boolean: @red;
-@js-undefined: @red;
-@js-arguments: @text;
-@js-curly-bracket: @purple;
-@js-round-brace: @purple;
-@js-square-brace: @teal;
-@js-variable: @text;
-@js-quasi: @text;
-@js-quasi-edge: @purple;
-@js-object-brace: @teal;
-@js-object-key: @teal;
-@js-object: @text;
-@js-object-method: @text;
-@js-object-property: @teal;
-@js-shorthand-object-property: @teal;
-@js-parameters-braces: @blue;
-@js-comma: @purple;
-@js-dot: @text;
-@js-type: @purple;
-@js-decorator: @green;
-@variable: @text;
-@js-comment: @light-gray;
-@js-semicolon: @purple;
-@js-assignment: @red;
-@js-definition: @blue;
-@js-special: @red;
+@js-set-variable: @text; // text
+@js-set-property: @teal; // teal
+@js-set-const-let-var-function-class: @dark-yellow; // blue
+@js-set-string-and-number: @green; // yellow
+@js-set-keyword: @red; // red
+@js-set-operator: @purple; // purple
+@js-set-function-invocation: @blue; // green
+@js-set-function-argument: @orange; // orange
+@js-set-function-definition: @text; // green
+@js-set-assignment: @red; // red
+@js-set-object: @dark-yellow; // teal
+@js-set-punctuation: @purple; // purple
+@js-set-comment: @gray; // gray
+
+// let variable = string | number;
+// variable.property = variable | string | number;
+// variable.function(variable string | number)
+// variable.property.function(variable | string | number)
+// keyword variable | string | number
+
+@js-keyword: @js-set-keyword;
+@js-this: @js-set-variable;
+@js-string: @js-set-string-and-number;
+@js-number: @js-set-string-and-number;
+@js-function-arrow: @js-set-function-argument;
+@js-function-definition-brace: @js-set-function-argument;
+@js-function-definition-curly: @js-set-const-let-var-function-class;
+@js-function-definition-name: @js-set-function-definition;
+@js-function-definition: @js-set-const-let-var-function-class;
+@js-function-name-object-key: @js-set-property;
+@js-function-invocation: @js-set-function-invocation;
+@js-function-invocation-brace: @js-set-punctuation;
+@js-function-argument: @js-set-function-argument;
+@js-parameter: @js-set-variable;
+@js-operator: @js-set-operator;
+@js-logical-operator: @js-set-operator;
+@js-operator-comparison: @js-set-operator;
+@js-null: @js-set-keyword;
+@js-boolean: @js-set-keyword;
+@js-undefined: @js-set-keyword;
+@js-arguments: @js-set-variable;
+@js-curly-bracket: @js-set-punctuation;
+@js-round-brace: @js-set-punctuation;
+@js-square-brace: @js-set-object;
+@js-variable: @js-set-variable;
+@js-quasi: @js-set-variable;
+@js-quasi-edge: @js-set-punctuation;
+@js-object-brace: @js-set-object;
+@js-object-key: @js-set-property;
+@js-object: @js-set-variable;
+@js-object-method: @js-set-variable;
+@js-object-property: @js-set-property;
+@js-shorthand-object-property: @js-set-property;
+@js-parameters-braces: @js-set-const-let-var-function-class;
+@js-comma: @js-set-punctuation;
+@js-dot: @js-set-operator;
+@js-decorator: @js-function-definition;
+@variable: @js-set-variable;
+@js-comment: @js-set-comment;
+@js-semicolon: @js-set-punctuation;
+@js-assignment: @js-set-assignment;
+@js-definition: @js-set-const-let-var-function-class;
+@js-special: @js-set-keyword;
 
 // Flow
+@js-type: @purple;
 @flow-type: @purple;
 @flow-semicolon: @text;
 @flow-keyword: @red;
@@ -98,3 +123,19 @@
 @html-attribute-name: @green;
 @html-attribute-value: @yellow;
 @html-text: @text;
+
+// TypeScript
+
+@ts-set-variable: @text;
+@ts-set-comment: @gray;
+@ts-set-keyword: @red;
+@ts-set-const-let-var-function-class: @dark-yellow;
+@ts-set-operator: @purple;
+@ts-set-punctuation: @purple;
+@ts-set-assignment: @red;
+@ts-set-object: @dark-yellow;
+@ts-set-property: @teal;
+@ts-set-string-and-number: @green;
+@ts-set-function-definition: @text;
+@ts-set-function-argument: @orange;
+@ts-set-function-invocation: @blue;

@@ -2,6 +2,10 @@
 // the secret number is, and nobody said this number.
 const SECRET_NUMBER = 251;
 
+function multiply(a, b) {
+    return a * b;
+}
+
 function generateRandomNumber() {
     return SECRET_NUMBER;
 }
@@ -16,7 +20,13 @@ class ExampleClass {
     }
 }
 
+const greetings = (name) => {
+    const str = `Greetings ${name}`;
+    console.log(str);
+}
+
 let instanceOfExampleClass = new ExampleClass();
 const str = instanceOfExampleClass.exampleMethod1();
 const sum = instanceOfExampleClass.exampleMethod2(1, 2);
+const multiplication = multiply(1, 1);
 console.log(`sum ${sum}`);
