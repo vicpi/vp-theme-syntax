@@ -76,8 +76,7 @@ atom-text-editor {
     color: @js-comment;
 }
 
-.syntax--js,
-.syntax--ts {
+.syntax--js {
     &.syntax--brace.syntax--curly {
         color: @js-curly-bracket;
     }
@@ -490,6 +489,13 @@ atom-text-editor {
         }
     }
 }
+
+.syntax--ts {
+    &.syntax--keyword {
+        color: @ts-set-keyword;
+    }
+}
+
 // Mini editor
 
 atom-text-editor[mini] .scroll-view {
