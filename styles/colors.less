@@ -1,11 +1,11 @@
 // Colors
-@text: #b7b7b7;
+@text: #a7a7a7; // #b7b7b7
 @very-light-gray: #c5c8c6;
 @light-gray: #898B89;
 @gray: #898B89;
 @dark-gray: #282a2e;
 @very-dark-gray: #1d1f21;
-@blue: #66A7E7;
+@blue: #5aa0e5; // #66A7E7
 @darkBlue: #6089b4;
 @teal: #649891;
 @violet: #a481df;
@@ -15,7 +15,7 @@
 @orange: #D19A66;
 @dark-orange: #ce6700;
 @yellow: #C1B660;
-@dark-yellow: #d0b344;
+@dark-yellow: #ba9d2e; // #d0b344
 @brown: #894f21;
 @purple: #a359a8;
 @dark-purple: #9872a2;
@@ -23,15 +23,15 @@
 // JavaScript
 @js-set-variable: @text; // text
 @js-set-property: @teal; // teal
-@js-set-const-let-var-function-class: @dark-yellow; // blue
-@js-set-string-and-number: @green; // yellow
+@js-set-const-let-var-function-class: @blue; // blue
+@js-set-string-and-number: @dark-yellow; // yellow
 @js-set-keyword: @red; // red
 @js-set-operator: @purple; // purple
-@js-set-function-invocation: @blue; // green
+@js-set-function-invocation: @green; // green
 @js-set-function-argument: @orange; // orange
 @js-set-function-definition: @text; // green
 @js-set-assignment: @red; // red
-@js-set-object: @dark-yellow; // teal
+@js-set-object: @teal; // teal
 @js-set-punctuation: @purple; // purple
 @js-set-comment: @gray; // gray
 
@@ -92,10 +92,10 @@
 @flow-keyword: @red;
 
 // React JSX
-@jsx-tag-bracket: @violet;
-@jsx-tag-name: @violet;
-@jsx-attribute-name: @blue;
-@jsx-embedded-section: @purple;
+@jsx-tag-bracket: @blue;
+@jsx-tag-name: @blue;
+@jsx-attribute-name: @violet;
+@jsx-embedded-section: @text;
 
 // CSS
 @css-selector: @blue;
@@ -126,16 +126,25 @@
 
 // TypeScript
 
-@ts-set-variable: @text;
-@ts-set-comment: @gray;
-@ts-set-keyword: @red;
-@ts-set-const-let-var-function-class: @dark-yellow;
-@ts-set-operator: @purple;
-@ts-set-punctuation: @purple;
-@ts-set-assignment: @red;
-@ts-set-object: @dark-yellow;
-@ts-set-property: @teal;
-@ts-set-string-and-number: @green;
-@ts-set-function-definition: @text;
-@ts-set-function-argument: @orange;
-@ts-set-function-invocation: @blue;
+@ts-variable: @text;
+@ts-comment: @gray;
+@ts-keyword: @red;
+@ts-const-let-var-function-class: @red;
+@ts-operator: @purple;
+@ts-punctuation: @purple;
+@ts-assignment: @red;
+@ts-object: @teal;
+@ts-property: @teal;
+@ts-string-and-number: @dark-yellow;
+@ts-function: @green;
+@ts-function-argument: @orange;
+@ts-type: @text;
+@ts-tag: @blue;
+@ts-attribute: @violet;
+@ts-value: @dark-yellow;
+
+
+
+// MarkDown
+@md-italic: @blue;
+@md-raw: @yellow;
