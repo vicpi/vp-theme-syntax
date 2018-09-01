@@ -490,9 +490,45 @@ atom-text-editor {
     }
 }
 
-.syntax--ts {
-    &.syntax--keyword {
-        color: @ts-set-keyword;
+.syntax--ts, .syntax--tsx {
+    &.syntax--keyword, &.syntax--modifier {
+        color: @ts-keyword;
+    }
+    &.syntax--string {
+        color: @ts-string-and-number;
+    }
+    &.syntax--punctuation {
+        color: @ts-punctuation;
+    }
+    &.syntax--punctuation.syntax--block {
+        color: @ts-operator;
+    }
+    &.syntax--punctuation, &.syntax--accessor {
+        color: @ts-variable;
+    }
+    &.syntax--type {
+        color: @ts-keyword;
+    }
+    &.syntax--type.syntax--entity, &.syntax--type.syntax--primitive, &.syntax--type.syntax--annotation {
+        color: @ts-type;
+    }
+    &.syntax--function {
+        color: @ts-function;
+    }
+    &.syntax--parameter, &.syntax--parameters {
+        color: @ts-function-argument;
+    }
+    &.syntax--brace.syntax--round {
+        color: @ts-operator;
+    }
+    &.syntax--objectliteral &.syntax--block, &.syntax--object-literal {
+        color: @ts-object;
+    }
+    &.syntax--tag.syntax--name, &.syntax--tag.syntax--punctuation {
+        color: @ts-tag;
+    }
+    &.syntax--attribute-name {
+        color: @ts-attribute;
     }
 }
 
@@ -527,5 +563,15 @@ atom-overlay {
         .syntax--attribute-with-value {
             color: @html-attribute-value;
         }
+    }
+}
+
+.syntax--gfm {
+    &.syntax--italic {
+        color: @md-italic;
+    }
+
+    &.syntax--raw {
+        color: @md-raw;
     }
 }
